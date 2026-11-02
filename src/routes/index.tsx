@@ -71,12 +71,7 @@ function Tank({ a, b, state }: { a: number; b: number; state: "eq" | "lt" | "gt"
         </div>
         <div className={`relative min-h-[420px] flex-1 overflow-hidden rounded-xl border-2 bg-background/60 ${state === "gt" ? "border-rose animate-ring" : ""}`}>
           <div className={`absolute inset-x-0 bottom-0 transition-all duration-700 ease-out ${fluid}`} style={{ height: `${fill}%` }}>
-            {a > 0 && (
-              <div className="absolute -top-2 left-0 h-4 w-[200%] animate-wave opacity-70"
-                style={{ background: "radial-gradient(circle at 10px -2px, transparent 10px, currentColor 11px) repeat-x", backgroundSize: "20px 16px" }}>
-                <div className={`h-full w-full ${fluid} [mask:radial-gradient(circle_at_10px_-2px,transparent_9px,black_10px)_repeat-x] [mask-size:20px_16px]`} />
-              </div>
-            )}
+            {a > 0 && <div className="absolute inset-x-0 top-0 h-1 bg-foreground/30 animate-pulse" />}
           </div>
           <div className="absolute inset-x-0 transition-all duration-500" style={{ bottom: `${mark}%` }}>
             <div className="border-t-2 border-dashed border-amber" />
